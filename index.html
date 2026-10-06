@@ -20,7 +20,18 @@
   </style>
 </head>
 <body>
-  <!-- Yahan apna Google Apps Script Web App URL daalein -->
-  <iframe src="https://script.google.com/macros/s/AKfycbwMGQu7AZzlgqyHZbBee7Ws5eHFBw7TbPPHkkvS9kWQP5D3BHIQ1Y2BRNC9K0BKUEkc/exec"></iframe>
+
+  <!-- URL Parameters Pass Karne Ke Liye Script -->
+  <script>
+    window.onload = function() {
+      var queryParams = window.location.search;
+      var appsScriptUrl = "https://script.google.com/macros/s/AKfycbwMGQu7AZzlgqyHZbBee7Ws5eHFBw7TbPPHkkvS9kWQP5D3BHIQ1Y2BRNC9K0BKUEkc/exec";
+      document.getElementById("appFrame").src = appsScriptUrl + queryParams;
+    };
+  </script>
+
+  <!-- Dynamic iFrame -->
+  <iframe id="appFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
+
 </body>
 </html>
